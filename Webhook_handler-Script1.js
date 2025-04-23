@@ -12,6 +12,7 @@ app.post('/webhook', (request, response) => {
 
     let event;
 
+        stripe listen --forward-to localhost:4242/webhook
     try {
         event = stripe.webhooks.constructEvent(request.body, sig, endpointSecret);
     } catch (err) {
